@@ -22,17 +22,17 @@ def print_header
   puts "--------------"
 end
 
-# def print(students)
-#   students.each_with_index do |student, index|
-#     puts "#{index}. #{student[:name]} (#{student[:cohort]} cohort)"
-#   end
-# end
-
 def print(students)
-  students.each do |student|
-    puts "#{student[:name]} (#{student[:cohort]} cohort)"
+  students.each_with_index do |student, index|
+    puts "#{index}. #{student[:name]} (#{student[:cohort]} cohort)"
   end
 end
+
+# def print(students)
+#   students.each do |student|
+#     puts "#{student[:name]} (#{student[:cohort]} cohort)"
+#   end
+# end
 
 def print_footer(names)
   puts "Overall, we have #{names.count} great students"
@@ -40,6 +40,7 @@ end
 
 students = input_students
 # nothing happens until we call the methods
+line_width = 50
 print_header
 print(students)
-print_footer(students)
+print_footer(students).center(line_width)
