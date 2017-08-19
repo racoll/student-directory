@@ -43,3 +43,26 @@ students = input_students
 print_header
 print(students)
 print_footer(students)
+
+
+
+students = [] #empty array
+ puts "Please enter a student name. Hit enter twice to exit"
+ name = gets.strip #Get user input and remove leading and trailing whitespaces
+ name = name.split(" ").map{|x| x.capitalize}.join(" ") # capitalize first letter of each word e.g. aaron smith => Aaron Smith
+ until name.empty? do #repeat code while name is not empty
+   puts "Please enter your hobbies"
+   hobbies =gets.strip
+   puts "Please enter Country of Birth"
+   country_of_birth = gets.strip
+   puts "Please enter your height in cm"
+   height =gets.strip.to_i
+   students << {:name => name, :cohort => :november, :hobbies => hobbies ,:country_of_birth => country_of_birth, :height => height} #add ended of array
+   msg = "Now we have #{students.count} student"
+   msg << "s" if students.count > 1
+   puts msg,""
+   puts "Please enter another student name. Hit enter twice to exit"
+   name = gets.strip #ask user for another, also need to prevent infinite loop
+ end
+ return students # return array
+end
