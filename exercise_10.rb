@@ -1,1 +1,1 @@
-gets.strip 
+gets.strip
