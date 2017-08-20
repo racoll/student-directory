@@ -1,53 +1,42 @@
-def print(students)
-  if # student's name begins with '' letter...
-    # run this code
-  else
-    # don't run the code
+def input_students
+  puts "Please enter the names of the students"
+  puts "To finish, just hit the return twice"
+  # create an empty array
+  students = []
+  # get the first name
+  name = gets.chomp
+  # while the name is not empty, repeat this code
+  while !name.empty? do
+    # add the student hash to the array
+    students << {name: name, cohort: :november}
+    puts "Now we have #{students.count} students"
+    # get another name from the user
+    name = gets.chomp
   end
-
-  students.each do |student|
-    students.select { |str| str.start_with?("d") }
-    puts "#{student[:name]} (#{student[:cohort]} cohort)"
-  end
+  # return the array of students
+  students
 end
 
-
-
-def select_elements_starting_with(students, letter)
-  students.select { |str| str.start_with?("d") } >> new.array
+def print_header
+  puts "The students of Villains Academy"
+  puts "--------------"
 end
-
-
-def print(students)
-  if student.start_with? "D"
-    puts "#{student[:name]} (#{student[:cohort]} cohort)"
-  else
-    puts nil
-  end
-end
-
-
 
 def print(students)
-  if students.start_with? "D", "d"
-    return "#{student[:name]} (#{student[:cohort]} cohort)"
-      else
-    return nil
-  end
+ students.each do |student|
+   if(student[:name][0].downcase == 'd')
+     puts "#{student[:name]} (#{student[:cohort]} cohort)"
+   end
+ end
 end
 
 
-
-def print(students)
-  if student.start_with?('d')
-    puts "#{student[:name]} (#{student[:cohort]} cohort)"
-  end
+def print_footer(names)
+  puts "Overall, we have #{names.count} great students"
 end
 
-# only print those which start with specific letter, say, "D"
-
-def print(students)
-  students.each do |student|
-    puts "#{student[:name]} (#{student[:cohort]} cohort)"
-  end
-end
+students = input_students
+# nothing happens until we call the methods
+print_header
+print(students)
+print_footer(students)
