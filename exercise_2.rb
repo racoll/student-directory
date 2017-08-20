@@ -4,7 +4,9 @@ def print(students)
   else
     # don't run the code
   end
+
   students.each do |student|
+    students.select { |str| str.start_with?("d") }
     puts "#{student[:name]} (#{student[:cohort]} cohort)"
   end
 end
@@ -15,6 +17,7 @@ def select_elements_starting_with(students, letter)
   students.select { |str| str.start_with?("d") } >> new.array
 end
 
+
 def print(students)
   if student.start_with? "D"
     puts "#{student[:name]} (#{student[:cohort]} cohort)"
@@ -24,11 +27,15 @@ def print(students)
 end
 
 
-if name.start_with? "R", "r"
-  return name + " plays banjo"
-    else
-  return name + " does not play banjo"
+
+def print(students)
+  if students.start_with? "D", "d"
+    return "#{student[:name]} (#{student[:cohort]} cohort)"
+      else
+    return nil
+  end
 end
+
 
 
 def print(students)
