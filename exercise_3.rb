@@ -24,7 +24,7 @@ end
 
 def print(students)
  students.each do |student|
-   if student[:name].length < 12
+   if student[:name].length < 12 && (student[:name][0].downcase == 'd')
      puts "#{student[:name]} (#{student[:cohort]} cohort)"
    end
  end
