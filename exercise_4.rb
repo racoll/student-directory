@@ -5,10 +5,7 @@ def print(students)
 end
 
 
-while
 
-  until condition
-
-  end
+  until 
 
   end

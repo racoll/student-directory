@@ -18,14 +18,16 @@ def input_students
 end
 
 def print_header
-  puts "The students of Villains Academy"
-  puts "--------------"
+  puts "The students of Villains Academy".center(60)
+  puts "--------------".center(60)
+  puts 
 end
 
 def print(students)
   students.each_with_index do |student, index|
-    puts "#{index}. #{student[:name]} (#{student[:cohort]} cohort)"
+    puts "#{index}. #{student[:name]} (#{student[:cohort]} cohort)".center(60)
   end
+  puts
 end
 
 # def print(students)
@@ -35,7 +37,8 @@ end
 # end
 
 def print_footer(names)
-  puts "Overall, we have #{names.count} great students"
+  puts "Overall, we have #{names.count} great students".center(60)
+  puts
 end
 
 students = input_students
